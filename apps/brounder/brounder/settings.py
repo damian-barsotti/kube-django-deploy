@@ -70,6 +70,7 @@ WSGI_APPLICATION = 'brounder.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+DEBUG = True
 # When 'NODB' is enabled,we skip Database and Cache setup. This is useful
 # to test the rest of the Django deployment while boostrapping the application.
 if os.getenv('DEVELOP'):
@@ -80,7 +81,6 @@ if os.getenv('DEVELOP'):
         }
     }
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
 else:
     # Dockerfile reads the DJANGO_PW from the secret into an environment
     # variable but its not there on kubectl exec. Soon Kubernetes versions
@@ -126,7 +126,6 @@ else:
             },
         },
     }
-    DEBUG = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
