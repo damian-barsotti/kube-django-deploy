@@ -27,3 +27,11 @@ Deploy with Kubectl
 	kubectl create -f .\brounder\brounder.yaml
 ```
 
+
+### Troubleshooting:
+
+In case of needed migrations
+```bash
+	 kubectl exec -it <POD_ID> python manage.py migrate
+```
+
