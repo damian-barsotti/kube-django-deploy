@@ -22,10 +22,6 @@ services:
   postgres:
     container_name: 'postgres'
     image: 'postgres:9.5.3'
-    environment:
-      POSTGRES_USER: django_user
-      POSTGRES_PASSWORD: pass # this should be a secret
-      POSTGRES_DB: guestbook
     ports:
       - '5432:5432'
     volumes:
