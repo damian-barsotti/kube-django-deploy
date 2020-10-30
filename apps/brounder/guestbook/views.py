@@ -37,6 +37,7 @@ def _update_visited():
     else:
         visited = int(visited)
     visited += 1
+    logger.info("Hello there this is just a dummy message from _update_visited")
     cache.set('visited', str(visited))
     return str(visited)
 

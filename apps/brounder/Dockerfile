@@ -19,4 +19,4 @@ RUN pip install -r /app/requirements.txt
 # Add application code.
 ADD . /app
 
-CMD export DJANGO_PASSWORD=$(cat /etc/secrets/djangouserpw); gunicorn -b :$PORT brounder.wsgi
+CMD python manage.py migrate; export DJANGO_PASSWORD=$(cat /etc/secrets/djangouserpw); gunicorn -b :$PORT brounder.wsgi
