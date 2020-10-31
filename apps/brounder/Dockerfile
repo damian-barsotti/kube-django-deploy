@@ -6,6 +6,8 @@ RUN virtualenv /env
 ENV VIRTUAL_ENV /env
 ENV PATH /env/bin:$PATH
 
+EXPOSE 80
+
 # Install dependencies.
 ADD requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
