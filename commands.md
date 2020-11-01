@@ -1,4 +1,24 @@
-## Docker 
+## Docker (imperativo)
+Levantar solo un servicio
+```
+    docker run -it -p 6379:6379 -v redisdata:/data redis:3.2.0
+```
+
+Listar los contenedores
+```
+    docker ps
+```
+
+Listar los recursos
+```
+    docker container ls
+    docker image ls
+    docker volume ls
+    docker secret ls
+```
+
+
+## Docker compose (declarativo)
 Levantar un servicio
 ```
     docker-compose up -d redis
@@ -11,7 +31,6 @@ Levantar todos los servicios
 
 Listar los contenedores
 ```
-    docker ps
     docker-compose ps 
 ```
 
@@ -32,6 +51,7 @@ Bajar un servicio
 
 ## Docker swarm
 
+Desplegar de manera declarativa
 ```
 docker swarm init
 docker stack deploy mystackname --compose-file docker-compose.yml
@@ -46,7 +66,7 @@ Despues volver a correr los comandos de kubernetes
 
 ## Kubernetes
 
-Listar todo
+Listar los recursos
 ```
 kubectl get all
 ```
@@ -67,7 +87,7 @@ Listar logs de la app
 kubectl logs --selector name=brounder -f --prefix
 ```
 
-Remover objetos
+Remover pods, despliegues servicios y secretos
 ```
 kubectl delete --all pods
 kubectl delete --all deployments
