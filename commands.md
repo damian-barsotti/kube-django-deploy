@@ -95,3 +95,10 @@ kubectl delete --all services
 kubectl delete --all secrets
 ```
 
+## Para dashboard kubernet
+
+https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+
+Para token
+https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+
